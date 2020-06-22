@@ -1,0 +1,32 @@
+/* General Typography */
+
+
+
+h1,h2,h3,h4,h5,h6,p,li, a, input, button{
+	font-family: 'Montserrat', 'Lato', sans-serif;
+	font-style: normal;
+	margin: 0;
+	font-variant-ligatures: common-ligatures; /* for up-to-date browsers, including IE10 and Opera 21 */
+	font-kerning: normal;
+	font-feature-settings: "kern" 1, "liga" 1, "pnum" 1;
+	letter-spacing: 0.2em;
+	line-height: 32px;
+
+	/* If using white text on black, to make sharper and thinner */
+	/* Chrome, Safari */
+	-webkit-font-smoothing: antialiased;
+	/* Firefox */
+	-moz-osx-font-smoothing: grayscale;
+}
+
+p{
+	font-size: 1.2rem;
+	line-height: 1.4;
+}
+
+a{
+	color: inherit;
+	text-decoration: none;
+	transition: all 0.3s ease-in-out;
+	letter-spacing: 0.2rem;
+}

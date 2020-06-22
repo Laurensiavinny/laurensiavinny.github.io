@@ -1,0 +1,290 @@
+/* ––––––– */
+/* Imports */
+/* ––––––– */
+/* This keeps our css organised by splitting into smaller more focused files instead of one big one */
+
+@import '_resets.css';
+@import '_typography.css';
+
+/* –––––––—— */
+/* Variables */
+/* –––––––—— */
+/* This allows us to reuse values easily and edit all from one place if we want to change later */
+:root {
+  /* Colours */
+  --black: #192526;
+  --orange: #DE864C;
+  --green: #8B8A65;
+  --beige: #F5F1EE;
+  --blue: #ABB7BD
+  /* Screen sizes */
+  /* Unfortunately we can't use these inside media queries yet but sass does let us do it, we'll talk about sass in the next class */
+  --mobile: 0px;
+  --tablet: 600px;
+  --laptop: 900px;
+}
+
+
+/*grid */
+@media screen and (min-width:0) {
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 30px;
+    width: 100%;
+    max-width: 1400px;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
+@media screen and (min-width:900px) {
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: 30px;
+    width: 100%;
+    max-width: 1440px;
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+}
+
+/* Navigation */
+nav{
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  background-color: var(--black);
+  color: var(--beige);
+  font-family: Lato;
+  font-size: 14px;
+  font-weight: 700;
+  position: fixed;
+  z-index: 1;
+}
+
+
+.logo-wrapper{
+  grid-column: 6 / span 2;
+  justify-self: center;
+  align-self: center;
+}
+
+.logo{
+  max-width: 100px;
+}
+
+.nav-1{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  grid-column: 1 / span 5;
+}
+
+.nav-2{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  grid-column: 8 / span 5;
+}
+
+/* Header */
+.header-2 {
+  position: absolute;
+  top: 80px;
+  left: 0;
+  z-index: 3;
+}
+
+.header-1 {
+  position: absolute;
+  top: 80px;
+  left: 0;
+  z-index: 1;
+}
+
+h1 {
+  color: var(--beige);
+  top:
+  font-family: Montserrat;
+  font-size: 80px;
+  font-weight: 700;
+  position: fixed;
+  top: 25%;
+  left: 30%;
+  z-index: 2;
+}
+
+.main {
+  background-color: var(--beige);
+  z-index: 5;
+}
+
+
+/* Welcome to Paradise */
+.Welcome-wrapper {
+  grid-column: 2 / span 10;
+  text-align: center;
+  align-self: center;
+  padding-top: 65rem;
+  padding-bottom: 5rem;
+}
+
+.line {
+  max-width: 368px;
+  margin-left: 35%;
+  padding-top: 3%;
+}
+
+h2.welcome-header {
+  color: var(--green);
+  font-family: Montserrat;
+  font-style: normal;
+  font-size: 42px;
+  font-weight: 700;
+}
+
+p.welcome-paragraph {
+  color: var(--black);
+  font-family: Lato;
+  font-style: normal;
+  font-size: 20px;
+  font-weight: 400;
+  margin: 80px;
+}
+
+/* Best of Indonesia */
+.Best-of-Indonesia {
+  grid-column: 2 / span 10;
+  text-align: center;
+  align-self: center;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+h2.Best-header {
+  color: var(--green);
+  font-family: Montserrat;
+  font-style: normal;
+  font-size: 42px;
+  font-weight: 700;
+}
+
+.slides {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 80px;
+}
+
+/* Bali */
+.one {
+  grid-column: 1 / span 3;
+  text-align: center;
+  color: var(--orange);
+  font-family: Lato;
+  font-style: normal;
+  font-size: 24px;
+}
+
+.bali {
+  grid-column: 4 / span 3;
+  text-align: left;
+  color: var(--orange);
+  font-family: Montserrat;
+  font-style: normal;
+  font-size: 72px;
+  font-weight: 700;
+}
+
+
+h4 {
+  color: var(--black);
+  font-family: Lato;
+  font-style: normal;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.balitext {
+  display: flex;
+  align-items: center;
+  grid-column: 6 / span 7;
+}
+
+
+.whatisbali {
+  color: var(--black);
+  font-family: Lato;
+  font-style: normal;
+  font-size: 18px;
+  font-weight: 400;
+  margin-top: 40px;
+}
+
+.bali-image {
+  position: absolute;
+  max-width: 870px;
+  top: 2250px;
+  left: 0;
+  z-index: 0;
+}
+
+h5 {
+  color: var(--black);
+  font-family: Lato;
+  font-style: normal;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.balibuttons {
+  margin: 30px;
+}
+
+.whattodo {
+  margin-top: 65px;
+}
+
+
+.explorebali {
+  padding: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  display: inline-block;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+  background: var(--black);
+  margin: 25px;
+
+
+  color: var(--beige);
+  font-family: Lato;
+  font-style: normal;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.temple , .monkeyforest , .mount , .surf , .visitwaterfall , .foodie {
+  padding: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  display: inline-block;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+  background: #FFFAF6;
+  margin: 5px;
+
+
+  color: var(--black);
+  font-family: Lato;
+  font-style: normal;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.temple , .surf {
+  margin-top: 18px;
+}
