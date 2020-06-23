@@ -61,7 +61,7 @@ nav{
   font-weight: 700;
   position: fixed;
   z-index: 1;
-  grid-column: 1 / span 12;
+  margin: 0;
 }
 
 
