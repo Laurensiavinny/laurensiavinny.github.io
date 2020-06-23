@@ -94,16 +94,20 @@ nav{
 .header-2 {
   position: absolute;
   top: 80px;
-  left: 0;
-  right: 0;
+  left: 0px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%
   z-index: 3;
 }
 
 .header-1 {
   position: absolute;
   top: 80px;
-  left: 0;
-  right: 0
+  left: 0px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%
   z-index: 1;
 }
 
