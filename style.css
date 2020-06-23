@@ -63,7 +63,6 @@ nav{
   z-index: 0;
   top: 0;
   left: 0;
-  justify-content: center;
 }
 
 
@@ -93,7 +92,7 @@ nav{
 
 /* Header */
 .header-2 {
-  position: relative;
+  position: absolute;
   top: 80px;
   left: 0px;
   margin-left: auto;
@@ -103,7 +102,7 @@ nav{
 }
 
 .header-1 {
-  position: relative;
+  position: absolute;
   top: 80px;
   left: 0px;
   margin-left: auto;
