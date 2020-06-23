@@ -94,6 +94,7 @@ nav{
 .header-2 {
   position: absolute;
   top: 80px;
+  justify-self: center;
   width: 50%
   z-index: 3;
 }
@@ -101,6 +102,7 @@ nav{
 .header-1 {
   position: absolute;
   top: 80px;
+  justify-self: center;
   width: 50%
   z-index: 1;
 }
