@@ -42,3 +42,16 @@ ul, ol{
 	padding: 0;
 	list-style: none;
 }
+
+/* Images */
+
+img{
+	display: block;
+	width: 100%;
+}
+
+/* SVG */
+
+svg{
+	display: block;
+}
