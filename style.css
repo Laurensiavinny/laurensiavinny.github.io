@@ -60,7 +60,7 @@ nav{
   font-size: 14px;
   font-weight: 700;
   position: fixed;
-  z-index: 1;
+  z-index: 0;
   margin: 0;
 }
 
