@@ -28,7 +28,7 @@
 body{
 	background-color: var(--beige);
   overflow-x: hidden;
-  max-width: 1440px
+  max-width: 1424px
 }
 
 /*——————————*/
@@ -70,7 +70,7 @@ body{
 nav{
   top: 0;
   left: 0;
-  width: 1440px;
+  width: 100%;
   padding: 1.5rem 100px;
   transition: 0.6s;
   position: fixed;
