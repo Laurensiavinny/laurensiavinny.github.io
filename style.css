@@ -16,7 +16,7 @@
   --orange: #DE864C;
   --green: #8B8A65;
   --beige: #F5F1EE;
-  --blue: #ABB7BD
+  --blue: #ABB7BD;
   /* Screen sizes */
   /* Unfortunately we can't use these inside media queries yet but sass does let us do it, we'll talk about sass in the next class */
   --mobile: 0px;
@@ -25,7 +25,13 @@
 }
 
 
+body{
+	background-color: var(--beige);
+}
+
+/*——————————*/
 /*grid */
+/*——————————*/
 @media screen and (min-width:0) {
   .grid {
     display: grid;
@@ -44,27 +50,31 @@
     grid-template-columns: repeat(12, 1fr);
     grid-gap: 30px;
     width: 100%;
-    max-width: 1424px;
+    max-width: 1440px;
     padding-left: 60px;
     padding-right: 60px;
   }
+
 }
 
+/*————————————————*/
 /* Navigation */
+/*————————————————*/
+
 nav{
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
-  background-color: var(--black);
-  color: var(--beige);
-  font-family: Lato;
-  font-size: 14px;
-  font-weight: 700;
-  position: fixed;
-  z-index: 0;
   top: 0;
   left: 0;
+  width: 100%;
+  padding: 1.5rem 100px;
+  transition: 0.6s;
+  position: fixed;
+  z-index: 8;
 }
 
+nav.sticky {
+  padding: 1rem 100px;
+  background: var(--black);
+}
 
 .logo-wrapper{
   grid-column: 6 / span 2;
@@ -73,39 +83,46 @@ nav{
 }
 
 .logo{
-  max-width: 100px;
+  position: relative;
+  max-width: 80px;
 }
 
 .nav-1{
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
   grid-column: 1 / span 5;
+  color: var(--beige);
+  font-family: Lato;
+  font-size: 12px;
+  font-weight: 700;
 }
 
 .nav-2{
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
   grid-column: 8 / span 5;
+  color: var(--beige);
+  font-family: Lato;
+  font-size: 12px;
+  font-weight: 700;
 }
 
 /* Header */
 .header-2 {
   position: absolute;
-  top: 80px;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%
+  top: 0px;
+  left: 0;
   z-index: 3;
 }
 
 .header-1 {
   position: absolute;
-  top: 80px;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%
+  top: 0px;
+  left: 0;
   z-index: 1;
 }
 
@@ -115,32 +132,32 @@ h1 {
   font-size: 80px;
   font-weight: 700;
   position: fixed;
-  top: 25%;
+  top: 30%;
   left: 0;
   right: 0;
   text-align: center;
   z-index: 2;
 }
 
-.main {
-  background-color: var(--beige);
-  z-index: 5;
-}
-
-
+/*———————————————————————*/
 /* Welcome to Paradise */
+/*———————————————————————*/
+
 .Welcome-wrapper {
   grid-column: 2 / span 10;
   text-align: center;
   align-self: center;
   padding-top: 65rem;
   padding-bottom: 5rem;
+  z-index: 5
 }
 
 .line {
   max-width: 368px;
-  margin-left: 35%;
+  display: inline-grid;
+  grid-column: 5 / span 3;
   padding-top: 3%;
+  z-index: 5
 }
 
 h2.welcome-header {
@@ -149,6 +166,7 @@ h2.welcome-header {
   font-style: normal;
   font-size: 42px;
   font-weight: 700;
+  z-index: 5
 }
 
 p.welcome-paragraph {
@@ -158,15 +176,20 @@ p.welcome-paragraph {
   font-size: 20px;
   font-weight: 400;
   margin: 80px;
+  background-color: #fffff;
+  z-index: 5
 }
 
+/*———————————————————————*/
 /* Best of Indonesia */
+/*———————————————————————*/
 .Best-of-Indonesia {
   grid-column: 2 / span 10;
   text-align: center;
   align-self: center;
   padding-top: 5rem;
   padding-bottom: 5rem;
+  z-index: 5
 }
 
 h2.Best-header {
@@ -175,6 +198,7 @@ h2.Best-header {
   font-style: normal;
   font-size: 42px;
   font-weight: 700;
+  z-index: 5
 }
 
 .slides {
@@ -182,9 +206,18 @@ h2.Best-header {
   justify-content: space-around;
   align-items: center;
   margin: 80px;
+  z-index: 5
 }
 
+/*————————*/
 /* Bali */
+/*————————*/
+
+.balibox {
+  margin-top: 100px;
+}
+
+/* Bali title */
 .one {
   grid-column: 1 / span 3;
   text-align: center;
@@ -192,6 +225,7 @@ h2.Best-header {
   font-family: Lato;
   font-style: normal;
   font-size: 24px;
+  z-index: 5
 }
 
 .bali {
@@ -202,23 +236,36 @@ h2.Best-header {
   font-style: normal;
   font-size: 72px;
   font-weight: 700;
+  margin-top: 50px;
+  z-index: 5
 }
 
+.line2 {
+  max-width: 75px;
+  display: inline-grid;
+  z-index: 5
+}
 
-h4 {
+/* Bali information */
+.islandofthegods {
   color: var(--black);
   font-family: Lato;
   font-style: normal;
   font-size: 24px;
   font-weight: 700;
+  z-index: 5
 }
 
 .balitext {
   display: flex;
   align-items: center;
   grid-column: 6 / span 7;
+  z-index: 5
 }
 
+.islandofthegods-text-wrapper {
+  max-width: 308px;
+}
 
 .whatisbali {
   color: var(--black);
@@ -227,42 +274,24 @@ h4 {
   font-size: 18px;
   font-weight: 400;
   margin-top: 40px;
+  margin-bottom: 25px;
+  z-index: 5
 }
 
 .bali-image {
   position: absolute;
-  max-width: 870px;
-  top: 2250px;
+  max-width: 675px;
+  top: 2200px;
   left: 0;
-  z-index: 0;
+  z-index: 5;
 }
-
-h5 {
-  color: var(--black);
-  font-family: Lato;
-  font-style: normal;
-  font-size: 18px;
-  font-weight: 700;
-}
-
-.balibuttons {
-  margin: 30px;
-}
-
-.whattodo {
-  margin-top: 65px;
-}
-
 
 .explorebali {
-  padding: 1rem;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  display: inline-block;
+  border: none;
+  padding: 0.5rem 1rem;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
   background: var(--black);
-  margin: 25px;
 
 
   color: var(--beige);
@@ -271,17 +300,38 @@ h5 {
   font-size: 12px;
   font-weight: 700;
   cursor: pointer;
+  display: block;
+  width: 100%;
 }
 
-.temple , .monkeyforest , .mount , .surf , .visitwaterfall , .foodie {
-  padding: 1rem;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  display: inline-block;
+/* Bali buttons */
+h5 {
+  color: var(--black);
+  font-family: Lato;
+  font-style: normal;
+  font-size: 18px;
+  font-weight: 700;
+  z-index: 5
+}
+
+.balibuttons {
+  margin: 0 0 0 30px;
+  text-align: left;
+  z-index: 5
+}
+
+.whattodo {
+  margin-top: 65px;
+  z-index: 5
+}
+
+.temple , .monkeyforest , .mount , .surf , .baliwaterfall , .foodie {
+  border: none;
+  padding: 0.5rem 0.5rem;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
   background: #FFFAF6;
-  margin: 5px;
+  margin-top: 20px;
 
 
   color: var(--black);
@@ -290,8 +340,161 @@ h5 {
   font-size: 12px;
   font-weight: 700;
   cursor: pointer;
+  display: block;
+  width: 100%;
 }
 
 .temple , .surf {
   margin-top: 18px;
 }
+
+
+/*————————*/
+/* Java */
+/*————————*/
+
+.javabox {
+  margin-top: 500px;
+}
+
+/* Bali title */
+.two {
+  grid-column: 11 / span 2;
+  text-align: center;
+  color: var(--blue);
+  font-family: Lato;
+  font-style: normal;
+  font-size: 24px;
+  z-index: 5
+}
+
+.java {
+  grid-column: 8 / span 3;
+  text-align: left;
+  color: var(--blue);
+  font-family: Montserrat;
+  font-style: normal;
+  font-size: 72px;
+  font-weight: 700;
+  margin-top: 50px;
+  z-index: 5
+}
+
+/* java information */
+.theheartofindonesia{
+  color: var(--black);
+  font-family: Lato;
+  font-style: normal;
+  font-size: 24px;
+  font-weight: 700;
+  z-index: 5
+}
+
+.javatext {
+  display: flex;
+  align-items: center;
+  grid-column: 2 / span 6;
+  z-index: 5
+}
+
+.theheartofindonesia-text-wrapper {
+  max-width: 308px;
+  margin: 0 0 0 50px;
+  order: 1;
+}
+
+.whatisjava {
+  color: var(--black);
+  font-family: Lato;
+  font-style: normal;
+  font-size: 18px;
+  font-weight: 400;
+  margin-top: 40px;
+  margin-bottom: 25px;
+  z-index: 5
+}
+
+.java-image {
+  position: absolute;
+  max-width: 640px;
+  top: 3450px;
+  right: 0;
+  z-index: 5;
+}
+
+.explorejava {
+  border: none;
+  padding: 0.5rem 1rem;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+  background: var(--black);
+
+
+  color: var(--beige);
+  font-family: Lato;
+  font-style: normal;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  display: block;
+  width: 100%;
+}
+
+/* Bali buttons */
+h5 {
+  color: var(--black);
+  font-family: Lato;
+  font-style: normal;
+  font-size: 18px;
+  font-weight: 700;
+  z-index: 5
+}
+
+.javabuttons {
+  text-align: left;
+  z-index: 5
+}
+
+.whattodo {
+  margin-top: 65px;
+  z-index: 5
+}
+
+.borobudur , .ujungkulon, .bromo, .shopbatik , .javawaterfall , .bogor {
+  border: none;
+  padding: 0.5rem 0.5rem;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+  background: #FFFAF6;
+  margin-top: 20px;
+
+
+  color: var(--black);
+  font-family: Lato;
+  font-style: normal;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  display: block;
+  width: 105%;
+}
+
+.borobudur , .shopbatik {
+  margin-top: 18px;
+  order: 2;
+}
+
+
+
+.wave-background1{
+  position: absolute;
+  top: 2075px;
+  z-index: 4;
+  width: 1440px;
+}
+
+.wave-background2{
+  position: absolute;
+  top: 4300px;
+  z-index: 4;
+  width: 1440px;
