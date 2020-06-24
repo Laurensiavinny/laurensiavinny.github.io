@@ -440,6 +440,10 @@ h5 {
   z-index: 5
 }
 
+.buttonscontainer {
+  text-align: left;
+}
+
 .whattodo {
   margin-top: 65px;
   z-index: 5
@@ -459,6 +463,7 @@ h5 {
   font-style: normal;
   font-size: 12px;
   font-weight: 700;
+  letter-spacing: 0.2em;
   cursor: pointer;
   display: block;
   width: 100%;
