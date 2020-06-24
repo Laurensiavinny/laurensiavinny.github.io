@@ -484,8 +484,6 @@ h5 {
   order: 2;
 }
 
-
-
 .wave-background1{
   position: absolute;
   top: 2075px;
@@ -498,3 +496,4 @@ h5 {
   top: 4300px;
   z-index: 4;
   width: 1440px;
+}
