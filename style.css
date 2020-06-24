@@ -27,6 +27,7 @@
 
 body{
 	background-color: var(--beige);
+  overflow-x: hidden;
 }
 
 /*——————————*/
@@ -44,7 +45,7 @@ body{
   }
 }
 
-@media screen and (min-width:900px) {
+@media screen and (min-width:980px) {
   .grid {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
@@ -53,6 +54,10 @@ body{
     max-width: 1440px;
     padding-left: 60px;
     padding-right: 60px;
+  }
+
+  .menu , .search {
+    display: none;
   }
 
 }
@@ -111,6 +116,10 @@ nav.sticky {
   font-weight: 700;
 }
 
+a:hover {
+  color: var(--orange);
+}
+
 /* Header */
 .header-2 {
   position: absolute;
@@ -132,7 +141,7 @@ h1 {
   font-size: 80px;
   font-weight: 700;
   position: fixed;
-  top: 30%;
+  top: 125px;
   left: 0;
   right: 0;
   text-align: center;
@@ -147,8 +156,7 @@ h1 {
   grid-column: 2 / span 10;
   text-align: center;
   align-self: center;
-  padding-top: 65rem;
-  padding-bottom: 5rem;
+  padding-top: 60rem;
   z-index: 5
 }
 
@@ -180,6 +188,74 @@ p.welcome-paragraph {
   z-index: 5
 }
 
+
+/*——————————————————*/
+/* Search Bar */
+/*——————————————————*/
+
+.container .input {
+  border: 0;
+  outline: none;
+  color: var(--beige);
+  z-index: 5;
+}
+
+.search-wrap {
+  width: 500px;
+  margin: 30px auto 30px auto;
+}
+
+.search-wrap .searchbox{
+  position: relative;
+  width: 500px;
+  height: 60px;
+}
+
+.search-wrap .searchbox .input{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-family: lato;
+  background-color: var(--black);
+}
+
+.search-wrap .searchbox .btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60px;
+  height: 100%;
+  background: var(--black);
+  z-index: 6;
+  cursor: pointer;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.search-wrap .searchbox .btn:hover {
+  background: var(--blue);
+}
+
+.search-wrap .searchbox .btn.btn-common .fas {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.search-wrap .search-wrap1 .searchbox .input{
+  padding-right: 80px;
+}
+
+.fas {
+  max-width: 20px;
+}
+
 /*———————————————————————*/
 /* Best of Indonesia */
 /*———————————————————————*/
@@ -201,12 +277,51 @@ h2.Best-header {
   z-index: 5
 }
 
-.slides {
+.slider{
+  background-color: var(--beige);
+  width: 960px;
+  height: 350px;
+  overflow: hidden;
+  position: relative;
+  margin: auto;
+  z-index: 5;
+}
+
+.slide {
+  height: 350px;
   display: flex;
-  justify-content: space-around;
   align-items: center;
-  margin: 80px;
-  z-index: 5
+  animation: slideshow 15s linear infinite;
+}
+
+.slide img {
+  height: 350px;
+  padding: 0 15px 0 15px;
+}
+
+@keyframes slideshow {
+  0% {transform: translateX(0);}
+  100% {transform: translateX(-100%);}
+}
+
+.slider::before, .slider::after {
+  height: 100px;
+  width: 500px;
+  position: absolute;
+  content: '';
+  background: linear-gradient (to right, var(--beige) 0%, rgba(255,255,255,0) 100%);
+  z-index: 6;
+}
+
+.slider::before {
+  left: 0;
+  top: 0;
+}
+
+.slider::after {
+  left: 0;
+  top: 0;
+  transform: rotateZ(180deg);
 }
 
 /*————————*/
@@ -214,7 +329,7 @@ h2.Best-header {
 /*————————*/
 
 .balibox {
-  margin-top: 100px;
+  margin-top: 250px;
 }
 
 /* Bali title */
@@ -348,7 +463,6 @@ h5 {
   margin-top: 18px;
 }
 
-
 /*————————*/
 /* Java */
 /*————————*/
@@ -357,7 +471,7 @@ h5 {
   margin-top: 500px;
 }
 
-/* Bali title */
+/* Java title */
 .two {
   grid-column: 11 / span 2;
   text-align: center;
@@ -440,7 +554,7 @@ h5 {
   width: 100%;
 }
 
-/* Bali buttons */
+/* Java buttons */
 h5 {
   color: var(--black);
   font-family: Lato;
@@ -497,3 +611,238 @@ h5 {
   z-index: 4;
   width: 1440px;
 }
+
+.btn3:hover {
+  border: 1px solid var(--black);
+  color: var(--black);
+  background: var(--beige);
+  transition: 0.3s;
+}
+
+.btn1:hover {
+  color: var(--beige);
+  background: var(--orange);
+  transition: 0.3s;
+}
+
+.btn2:hover {
+  color: var(--beige);
+  background: var(--blue);
+  transition: 0.3s;
+}
+
+@media screen and (max-width:1420px) {
+  .bali-image {
+  max-width: 45%;
+  }
+
+  .java-image {
+  max-width: 48%;
+  }
+
+  }
+
+@media screen and (max-width:1150px) {
+  .nav-1 , .nav-2{
+    font-size: 10px;
+  }
+
+  h1 {
+    font-size: 56px;
+  }
+
+  .Welcome-wrapper {
+    padding-top: 50rem;
+  }
+
+  .balibox {
+    margin-top: 400px;
+  }
+
+  .balibuttons {
+    display: none;
+  }
+
+  .bali-image {
+  top: 2250px;
+  }
+
+  .islandofthegods {
+    margin-top: 50px;
+  }
+
+  .javabox {
+    margin-top: 500px;
+  }
+
+  .java-image {
+   top: 3300px;
+  }
+
+  .wave-background1 , .wave-bacground2{
+    width: 1150px;
+  }
+
+}
+
+
+@media screen and (max-width:980px){
+  .nav-1 , .nav-2{
+    display: none;
+  }
+
+  .menu {
+    max-width: 20px;
+    justify-self: flex-start;
+    grid-column: 1 / span 1;
+  }
+
+  .search {
+    max-width: 20px;
+    justify-self: flex-end;
+    grid-column: 4 / span 1;
+  }
+
+  nav.sticky {
+    padding: 1rem 30px;
+  }
+
+  h1 {
+    font-size: 48px;
+    top: 80px;
+  }
+
+  .logo-wrapper{
+    grid-column: 2 / span 2;
+  }
+
+  .logo{
+    max-width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .Welcome-wrapper {
+    grid-column: 1 / span 4;
+    padding-top: 40rem;
+  }
+
+  .line {
+    grid-column: 2 / span 2;
+  }
+
+  .Best-of-Indonesia {
+    grid-column: 1 / span 4;
+  }
+
+  h2.Best-header , h2.welcome-header {
+    font-size: 32px;
+  }
+
+  p.welcome-paragraph {
+    font-size: 18px;
+  }
+
+  .wave-background1 , .wave-bacground2{
+      width: 900px;
+  }
+
+  .slide img {
+    height: 300px;
+    padding: 0 5px 0 5px;
+  }
+
+  /*————————*/
+  /* Bali */
+  /*————————*/
+
+  .balibox {
+    margin-top: 350px;
+  }
+
+  /* Bali title */
+  .one {
+    grid-column: 1 / span 1;
+    font-size: 18px;
+  }
+
+  .bali {
+    grid-column: 2 / span 1;
+    font-size: 56px;
+  }
+
+  .islandofthegods {
+    font-size: 18px;
+  }
+
+  .balitext {
+    grid-column: 3 / span 2;
+  }
+
+  .islandofthegods-text-wrapper {
+    max-width: 308px;
+    margin-top: 100px;
+  }
+
+  .whatisbali , .whatisjava{
+    font-size: 14px;
+  }
+
+  .explorebali , .explorejava{
+    font-size: 12px;
+  }
+
+  .bali-image {
+  top: 2050px;
+  }
+
+  /*————————*/
+  /* Java */
+  /*————————*/
+
+  .javabox {
+    margin-top: 300px;
+  }
+
+  /* Java title */
+  .two {
+    grid-column: 4 / span 1;
+    font-size: 18px;
+  }
+
+  .java {
+    grid-column: 2 / span 1;
+    font-size: 56px;
+    margin-top: 10px;
+  }
+
+  .theheartofindonesia{
+    font-size: 18px;
+  }
+
+  .javatext {
+    grid-column: 1 / span 2;
+  }
+
+  .theheartofindonesia-text-wrapper {
+    max-width: 308px;
+    margin: 50px 0 0 50px;
+  }
+
+  .java-image {
+    top: 2700px;
+  }
+
+  .wave-background1{
+    top: 1850px;
+  }
+
+  .wave-background2{
+    top: 3350px;
+  }
+
+  .container {
+    display: none;
+  }
+
+  }
